@@ -44,7 +44,7 @@ int main()
     {
         cout << "te jong!";
         return 1;
-    }
+    } 
     if (gjaar < yearc - 100)
     {
         cout << "ouder dan honderd en kan nog typen geweldig! maar doei";
