@@ -1,4 +1,4 @@
-
+//
 //
 //
 //
@@ -8,9 +8,11 @@
 #include<iostream>
 using namespace std;
 
-const int yearc = 2022;
-const int monthc = 9;
-const int dayc = 27;
+const int yearc = 2022;//dit is het huidige jaar,
+const int monthc = 9;//,maand
+const int dayc = 27;//en dag
+const int yeard = 1901;
+
 
 
 
@@ -19,9 +21,6 @@ int main()
     int gjaar;
     int gmaand;
     int gdag;
-
-
-
 
     //
     cout << "enter your birthyear ";//d,m,y, bd, bm, by
@@ -123,9 +122,82 @@ int main()
         }
     }
 
+    int days = (gjaar - yeard) * 365 + ((gjaar - yeard)/4);
+    int x;
+    if (gjaar % 4 == 0)
+    {
+        days = days + 1;
+    }
+    else if (gjaar % 4 != 0)
+    {
+        days = days;
+    }
+
+    if(gmaand == 1)
+    {
+        x = days + gdag - 1;
+    }
+    if(gmaand == 2)
+    {
+        x = days + gdag + 30;
+    }
+    if(gmaand == 3)
+    {
+        x = days + gdag + 58;
+    }
+    if(gmaand == 4)
+    {
+        x = days + gdag + 89;
+    }
+    if(gmaand == 5)
+    {
+        x = days + gdag + 119;
+    }
+    if(gmaand == 6)
+    {
+        x = days + gdag + 150;
+    }
+    if(gmaand == 7)
+    {
+        x = days + gdag + 180;
+    }
+    if(gmaand == 8)
+    {
+        x = days + gdag + 211;
+    }
+    if(gmaand == 9)
+    {
+        x = days + gdag + 242;
+    }
+    if(gmaand == 10)
+    {
+        x = days + gdag + 272;
+    }
+    if(gmaand == 11)
+    {
+        x = days + gdag + 303;
+    }
+    if(gmaand == 12)
+    {
+        x = days + gdag + 333;
+    }
+    int y = x % 7;
+    int p;
+    cout << "enter";
+    cin >> p;
+    if(p == y) //hier nog even confused morgen afmaken
+    {
+        cout << "niceee" << endl;
+    }
+    else if (p != y)
+    {
+        cout << "fout" << endl;
+        return 1;
+    }
+
     cout << "dit is hoe oud jij bent ";
     if (gmaand > monthc){
-            if (gdag > dayc) // nog niet jarig
+        if (gdag > dayc) // nog niet jarig
         {
             cout << yearc - gjaar -1 << " jaren " << 12- (gmaand - monthc);
             cout << " maanden " << 31 - (gdag - dayc) << " dagen " ;
@@ -169,14 +241,14 @@ int main()
     cout << endl;
 
     srand (gmaand*gdag*gjaar);
-    int x = -40 + (rand () % 160);
-    cout << "zet dit getal om van fahrenheit naar celsius en andersom: " << x;
-    int C ;
+    int a = -40 + (rand () % 160);
+    cout << "zet dit getal om van fahrenheit naar celsius en andersom: " << a;
+    int C;
     int F;
     int c;
     int f;
-    C = (x-32)*5/9;
-    F = (x * 9/5) + 32;
+    C = (a-32)*5/9;
+    F = (a * 9/5) + 32;
     cout << endl << " van fahrenheit naar celsius in gehele getallen: ";
     cin >> c;
     cout << endl << " van celsius naar fahrenheit in gehele getallen ";
